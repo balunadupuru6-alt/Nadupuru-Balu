@@ -1,0 +1,6 @@
+{
+  "name": "Balu Nadupuru Portfolio",
+  "description": "Futuristic, minimalist personal portfolio website for Balu Nadupuru, B.Tech CSE (AI) student at Joy University.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

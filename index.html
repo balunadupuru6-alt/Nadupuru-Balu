@@ -1,0 +1,2679 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Balu Nadupuru — Portfolio 2026 | B.Tech CSE (AI)</title>
+    <meta
+      name="description"
+      content="Personal portfolio of Balu Nadupuru, 1st year B.Tech Computer Science and Engineering (Artificial Intelligence) student at Joy University."
+    />
+    <meta property="og:title" content="Balu Nadupuru — Portfolio 2026 | B.Tech CSE (AI)" />
+    <meta
+      property="og:description"
+      content="Personal portfolio of Balu Nadupuru, 1st year B.Tech CSE (AI) student at Joy University."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg: #05060a;
+        --text: #eef1ff;
+        --text-muted: #9aa3c7;
+        --blue: #2f6bff;
+        --purple: #8b5cf6;
+        --cyan: #22d3ee;
+        --gradient: linear-gradient(110deg, #2f6bff, #8b5cf6);
+        --gradient-hover: linear-gradient(110deg, #235ae8, #7c3aed);
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-border: rgba(255, 255, 255, 0.12);
+        --glass-blur: blur(18px);
+        --card-radius: 22px;
+        --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --nav-height: 72px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        position: relative;
+        min-height: 100vh;
+        overflow-x: hidden;
+        background-color: var(--bg);
+      }
+
+      /* Focus styles for accessibility */
+      :focus-visible {
+        outline: 2px solid var(--cyan);
+        outline-offset: 3px;
+        border-radius: 6px;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Background glowing blobs */
+      .blob-container {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(130px);
+        opacity: 0.38;
+        will-change: transform;
+      }
+
+      .blob-blue {
+        width: 580px;
+        height: 580px;
+        background: radial-gradient(circle, var(--blue) 0%, rgba(47, 107, 255, 0) 70%);
+        top: -120px;
+        left: -140px;
+        animation: driftBlue 22s ease-in-out infinite alternate;
+      }
+
+      .blob-purple {
+        width: 650px;
+        height: 650px;
+        background: radial-gradient(circle, var(--purple) 0%, rgba(139, 92, 246, 0) 70%);
+        bottom: 10%;
+        right: -160px;
+        animation: driftPurple 26s ease-in-out infinite alternate;
+      }
+
+      @keyframes driftBlue {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(120px, 140px) scale(1.12);
+        }
+        100% {
+          transform: translate(60px, 240px) scale(0.95);
+        }
+      }
+
+      @keyframes driftPurple {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        50% {
+          transform: translate(-140px, -120px) scale(1.15);
+        }
+        100% {
+          transform: translate(-80px, -220px) scale(0.92);
+        }
+      }
+
+      /* Global Layout & Typography */
+      .container {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+        position: relative;
+        z-index: 1;
+      }
+
+      section {
+        padding: 100px 0;
+        scroll-margin-top: 100px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        color: var(--cyan);
+        margin-bottom: 14px;
+      }
+
+      .section-heading {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin-bottom: 24px;
+        color: var(--text);
+      }
+
+      .gradient-text {
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Floating glass pill navigation */
+      .nav-wrapper {
+        position: fixed;
+        top: 20px;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        padding: 0 16px;
+        pointer-events: none;
+      }
+
+      .nav-pill {
+        pointer-events: auto;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        background: rgba(10, 12, 22, 0.72);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border: 1px solid var(--glass-border);
+        border-radius: 9999px;
+        box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(47, 107, 255, 0.08);
+        max-width: 95vw;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-pill::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-link {
+        font-family: var(--font-heading);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        padding: 8px 16px;
+        border-radius: 9999px;
+        transition: color 0.25s ease, background-color 0.25s ease;
+        white-space: nowrap;
+        display: inline-block;
+      }
+
+      .nav-link:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-link.active {
+        color: #ffffff;
+        background: rgba(47, 107, 255, 0.25);
+        border: 1px solid rgba(47, 107, 255, 0.4);
+      }
+
+      /* Buttons */
+      .btn-gradient {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        font-family: var(--font-heading);
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #ffffff;
+        background: var(--gradient);
+        border-radius: 9999px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0 10px 28px -6px rgba(47, 107, 255, 0.45);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        cursor: pointer;
+        text-decoration: none;
+        width: fit-content;
+      }
+
+      .btn-gradient:hover {
+        transform: translateY(-2px);
+        background: var(--gradient-hover);
+        box-shadow: 0 14px 34px -4px rgba(139, 92, 246, 0.55);
+      }
+
+      .btn-gradient:active {
+        transform: translateY(0);
+      }
+
+      /* Glass Panels */
+      .glass-card {
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border-radius: var(--card-radius);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Scroll reveal animation */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal.is-revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 1. HERO SECTION */
+      .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding-top: calc(var(--nav-height) + 50px);
+        padding-bottom: 70px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .hero-name {
+        font-family: var(--font-heading);
+        font-size: clamp(3.2rem, 6.8vw, 5.6rem);
+        font-weight: 700;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+      }
+
+      .hero-name .first-name {
+        color: #ffffff;
+        display: block;
+      }
+
+      .hero-name .last-name {
+        display: block;
+      }
+
+      .typing-line {
+        font-family: var(--font-heading);
+        font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+        font-weight: 500;
+        color: var(--text);
+        letter-spacing: -0.01em;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        min-height: 40px;
+      }
+
+      .typing-highlight {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+
+      .cursor {
+        display: inline-block;
+        color: var(--cyan);
+        font-weight: 300;
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+      }
+
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero-intro {
+        font-size: clamp(1rem, 1.3vw, 1.15rem);
+        color: var(--text-muted);
+        line-height: 1.75;
+        max-width: 540px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 9px 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text);
+        width: fit-content;
+      }
+
+      .glowing-cyan-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--cyan);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--cyan), 0 0 18px var(--cyan);
+        flex-shrink: 0;
+      }
+
+      /* Hero Avatar */
+      .hero-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        perspective: 1000px;
+      }
+
+      .avatar-stage {
+        position: relative;
+        width: 320px;
+        height: 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform-style: preserve-3d;
+        transition: transform 0.2s cubic-bezier(0.2, 0, 0.2, 1);
+      }
+
+      .rotating-ring {
+        position: absolute;
+        inset: -6px;
+        border-radius: 50%;
+        background: conic-gradient(from 0deg, var(--blue), var(--purple), var(--cyan), var(--blue));
+        animation: spinRing 9s linear infinite;
+        filter: drop-shadow(0 0 24px rgba(47, 107, 255, 0.5));
+      }
+
+      @keyframes spinRing {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .avatar-center {
+        position: relative;
+        width: calc(100% - 14px);
+        height: calc(100% - 14px);
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 30%, #161a2e 0%, #070913 90%);
+        border: 2px solid rgba(255, 255, 255, 0.16);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: inset 0 2px 14px rgba(255, 255, 255, 0.12), 0 18px 45px rgba(0, 0, 0, 0.8);
+        z-index: 2;
+      }
+
+      .monogram {
+        font-family: var(--font-heading);
+        font-size: 5.5rem;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        user-select: none;
+      }
+
+      /* Floating Chips */
+      .floating-chip {
+        position: absolute;
+        padding: 8px 16px;
+        background: rgba(14, 18, 36, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        border-radius: 9999px;
+        font-family: var(--font-heading);
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #ffffff;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.55), 0 0 12px rgba(47, 107, 255, 0.2);
+        z-index: 3;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      .chip-1 {
+        top: -10px;
+        right: 15px;
+        animation: floatChip1 5s ease-in-out infinite alternate;
+      }
+
+      .chip-2 {
+        bottom: 25px;
+        left: -20px;
+        animation: floatChip2 6s ease-in-out infinite alternate 0.6s;
+      }
+
+      .chip-3 {
+        top: 45%;
+        right: -35px;
+        animation: floatChip3 5.4s ease-in-out infinite alternate 1.2s;
+      }
+
+      .chip-4 {
+        top: 20px;
+        left: -15px;
+        animation: floatChip4 5.8s ease-in-out infinite alternate 1.8s;
+      }
+
+      @keyframes floatChip1 {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-14px);
+        }
+      }
+
+      @keyframes floatChip2 {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(14px);
+        }
+      }
+
+      @keyframes floatChip3 {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-12px);
+        }
+      }
+
+      @keyframes floatChip4 {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(12px);
+        }
+      }
+
+      /* 2. ABOUT SECTION */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-left .about-text {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        margin-bottom: 20px;
+      }
+
+      .about-left .about-text strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .stats-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .stat-card {
+        padding: 26px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(47, 107, 255, 0.35);
+      }
+
+      .stat-card.indent {
+        margin-left: 36px;
+      }
+
+      .stat-number {
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 3.2vw, 2.7rem);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .stat-label {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      /* 3. SKILLS SECTION */
+      .skills-section {
+        padding-bottom: 120px;
+      }
+
+      .skills-header {
+        text-align: center;
+        max-width: 650px;
+        margin: 0 auto 50px auto;
+      }
+
+      /* Infinite scrolling ticker */
+      .ticker-container {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        overflow: hidden;
+        margin-bottom: 60px;
+        mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+        user-select: none;
+      }
+
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        gap: 36px;
+        animation: scrollTicker 24s linear infinite;
+      }
+
+      .ticker-track:hover {
+        animation-play-state: paused;
+      }
+
+      .ticker-item {
+        font-family: var(--font-heading);
+        font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.38);
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 36px;
+      }
+
+      .ticker-dot {
+        font-size: 1.8rem;
+        color: rgba(255, 255, 255, 0.25);
+        -webkit-text-stroke: 0;
+      }
+
+      @keyframes scrollTicker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .skills-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .skill-card {
+        padding: 32px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(139, 92, 246, 0.35);
+      }
+
+      .skill-card-title {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        color: #ffffff;
+      }
+
+      .chips-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 8px 14px;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: transform 0.2s ease;
+      }
+
+      .chip:hover {
+        transform: translateY(-2px);
+      }
+
+      .chip-blue {
+        background: rgba(47, 107, 255, 0.12);
+        border: 1px solid rgba(47, 107, 255, 0.32);
+        color: #a5c2ff;
+      }
+
+      .chip-purple {
+        background: rgba(139, 92, 246, 0.12);
+        border: 1px solid rgba(139, 92, 246, 0.32);
+        color: #d1c4fe;
+      }
+
+      /* 4. PROJECTS SECTION */
+      .projects-section {
+        padding-bottom: 120px;
+      }
+
+      .projects-header {
+        max-width: 650px;
+        margin-bottom: 50px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        align-items: start;
+      }
+
+      .project-card {
+        padding: 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        min-height: 480px;
+        justify-content: space-between;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        transition: transform 0.25s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.3s ease;
+      }
+
+      .project-card.offset {
+        margin-top: 56px;
+      }
+
+      /* Purple glow that follows cursor */
+      .project-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(
+          550px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+          rgba(139, 92, 246, 0.18),
+          transparent 55%
+        );
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+      }
+
+      .project-card:hover::before {
+        opacity: 1;
+      }
+
+      .project-card-inner {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .project-number {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.05em;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+      }
+
+      .project-title {
+        font-family: var(--font-heading);
+        font-size: 1.65rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+        line-height: 1.25;
+      }
+
+      .project-desc {
+        font-size: 0.98rem;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 6px;
+      }
+
+      .project-tag {
+        font-family: var(--font-heading);
+        font-size: 0.78rem;
+        font-weight: 600;
+        padding: 5px 12px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+      }
+
+      .project-btn-wrap {
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+        padding-top: 20px;
+      }
+
+      .pulse-dot {
+        width: 8px;
+        height: 8px;
+        background: #ffffff;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+        animation: pulseAnimation 2s infinite ease-in-out;
+      }
+
+      @keyframes pulseAnimation {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.4);
+          opacity: 0.7;
+        }
+      }
+
+      /* 5. EDUCATION SECTION */
+      .education-section {
+        padding-bottom: 110px;
+      }
+
+      .education-header {
+        max-width: 650px;
+        margin-bottom: 60px;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 780px;
+        margin: 0 auto;
+        padding-left: 48px;
+      }
+
+      .timeline-line {
+        position: absolute;
+        top: 24px;
+        bottom: 24px;
+        left: 15px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--cyan) 0%, var(--blue) 50%, var(--purple) 100%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 36px;
+      }
+
+      .timeline-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-node {
+        position: absolute;
+        left: -48px;
+        top: 28px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 12px var(--cyan), 0 0 24px var(--cyan);
+        border: 2px solid var(--bg);
+      }
+
+      .timeline-card {
+        padding: 28px 32px;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .timeline-card:hover {
+        transform: translateX(6px);
+        border-color: rgba(34, 211, 238, 0.4);
+      }
+
+      .timeline-status {
+        display: inline-block;
+        font-family: var(--font-heading);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        padding: 4px 10px;
+        border-radius: 9999px;
+        background: rgba(34, 211, 238, 0.12);
+        color: var(--cyan);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        margin-bottom: 12px;
+      }
+
+      .timeline-title {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 6px;
+        letter-spacing: -0.01em;
+      }
+
+      .timeline-meta {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+      }
+
+      /* 6. ACHIEVEMENTS SECTION */
+      .achievements-section {
+        padding-bottom: 110px;
+      }
+
+      .achievements-header {
+        max-width: 650px;
+        margin-bottom: 48px;
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+
+      .dashed-card {
+        padding: 34px 30px;
+        border: 1px dashed rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: var(--card-radius);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        transition: border-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .dashed-card:hover {
+        border-color: rgba(139, 92, 246, 0.45);
+        transform: translateY(-4px);
+      }
+
+      .dashed-card-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--cyan);
+      }
+
+      .dashed-card-text {
+        font-size: 1.02rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+
+      .dashed-card-text strong {
+        color: #ffffff;
+      }
+
+      /* 7. CONTACT SECTION */
+      .contact-section {
+        padding-bottom: 120px;
+      }
+
+      .contact-card {
+        padding: 70px 40px;
+        text-align: center;
+        max-width: 820px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .contact-sub {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 520px;
+        line-height: 1.65;
+      }
+
+      .contact-email-link {
+        font-family: var(--font-heading);
+        font-size: clamp(1.3rem, 2.8vw, 2.2rem);
+        font-weight: 700;
+        color: #ffffff;
+        text-decoration: underline;
+        text-decoration-color: var(--cyan);
+        text-underline-offset: 8px;
+        transition: color 0.25s ease, text-decoration-color 0.25s ease;
+        word-break: break-all;
+      }
+
+      .contact-email-link:hover {
+        color: var(--cyan);
+        text-decoration-color: #ffffff;
+      }
+
+      .contact-actions {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-top: 12px;
+      }
+
+      .icon-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+        transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1), background-color 0.3s ease,
+          border-color 0.3s ease, color 0.3s ease;
+      }
+
+      .icon-btn:hover {
+        transform: translateY(-5px) rotate(6deg);
+        background: rgba(47, 107, 255, 0.2);
+        border-color: rgba(47, 107, 255, 0.5);
+        color: #ffffff;
+      }
+
+      .icon-btn svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+      }
+
+      /* 8. FOOTER */
+      .site-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 34px 0;
+        position: relative;
+        z-index: 1;
+        background: rgba(5, 6, 10, 0.6);
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+
+      /* Live Demo Modals */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(4, 6, 12, 0.82);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.28s ease;
+      }
+
+      .modal-overlay.is-active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-dialog {
+        background: #0b0e1c;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--card-radius);
+        box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(47, 107, 255, 0.18);
+        width: 100%;
+        max-width: 720px;
+        max-height: 92vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transform: translateY(22px) scale(0.97);
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .modal-overlay.is-active .modal-dialog {
+        transform: translateY(0) scale(1);
+      }
+
+      .modal-header {
+        padding: 22px 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .modal-title-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .modal-eyebrow {
+        font-family: var(--font-heading);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--cyan);
+      }
+
+      .modal-title {
+        font-family: var(--font-heading);
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .modal-close-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--text-muted);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        flex-shrink: 0;
+      }
+
+      .modal-close-btn:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        transform: scale(1.08);
+      }
+
+      .modal-body {
+        padding: 26px 28px;
+        overflow-y: auto;
+        color: var(--text);
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .demo-intro-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 9999px;
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.25);
+        color: var(--cyan);
+        font-size: 0.8rem;
+        font-weight: 600;
+        width: fit-content;
+      }
+
+      .demo-form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+
+      .demo-form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .demo-form-group.full-width {
+        grid-column: span 2;
+      }
+
+      .demo-label {
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-muted);
+      }
+
+      .demo-input,
+      .demo-select {
+        padding: 10px 14px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        font-family: var(--font-body);
+        font-size: 0.92rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+
+      .demo-input:focus,
+      .demo-select:focus {
+        border-color: var(--cyan);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+      }
+
+      .demo-select option {
+        background: #0b0e1c;
+        color: #ffffff;
+      }
+
+      .demo-btn-row {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        margin-top: 6px;
+      }
+
+      .demo-action-btn {
+        padding: 11px 20px;
+        border-radius: 9999px;
+        font-family: var(--font-heading);
+        font-size: 0.88rem;
+        font-weight: 600;
+        cursor: pointer;
+        border: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+      }
+
+      .demo-action-btn.primary {
+        background: var(--gradient);
+        color: #ffffff;
+        box-shadow: 0 6px 18px rgba(47, 107, 255, 0.35);
+      }
+
+      .demo-action-btn.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 22px rgba(139, 92, 246, 0.45);
+      }
+
+      .demo-action-btn.secondary {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--text);
+      }
+
+      .demo-action-btn.secondary:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .demo-alert {
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-size: 0.88rem;
+        display: none;
+        align-items: center;
+        gap: 10px;
+        line-height: 1.5;
+      }
+
+      .demo-alert.error {
+        display: flex;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #fca5a5;
+      }
+
+      .demo-alert.success {
+        display: flex;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        color: #6ee7b7;
+      }
+
+      .section-subhead {
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* Booking list item */
+      .booking-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .booking-item {
+        padding: 12px 16px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .booking-item-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .booking-item-title {
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.95rem;
+        color: #ffffff;
+      }
+
+      .booking-item-meta {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      .booking-cancel-btn {
+        padding: 6px 14px;
+        border-radius: 9999px;
+        background: rgba(239, 68, 68, 0.12);
+        border: 1px solid rgba(239, 68, 68, 0.3);
+        color: #fca5a5;
+        font-size: 0.8rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s, transform 0.2s;
+      }
+
+      .booking-cancel-btn:hover {
+        background: rgba(239, 68, 68, 0.25);
+        transform: translateY(-1px);
+      }
+
+      /* Result Card Display */
+      .result-card-container {
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .result-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 12px;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .result-student-name {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .result-roll-no {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      .result-badge {
+        padding: 5px 12px;
+        border-radius: 9999px;
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .result-badge.pass {
+        background: rgba(16, 185, 129, 0.15);
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        color: #34d399;
+      }
+
+      .result-badge.fail {
+        background: rgba(239, 68, 68, 0.15);
+        border: 1px solid rgba(239, 68, 68, 0.4);
+        color: #f87171;
+      }
+
+      .subject-bars-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .subject-bar-row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .subject-bar-labels {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.82rem;
+      }
+
+      .subject-bar-name {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .subject-bar-score {
+        color: var(--cyan);
+        font-weight: 700;
+        font-family: var(--font-heading);
+      }
+
+      .bar-track {
+        height: 7px;
+        border-radius: 9999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        border-radius: 9999px;
+        background: var(--gradient);
+        transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .result-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .result-summary-box {
+        padding: 10px 6px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .result-summary-val {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #ffffff;
+      }
+
+      .result-summary-lbl {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      /* Prefers reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+
+        .blob,
+        .ticker-track,
+        .pulse-dot,
+        .floating-chip,
+        .rotating-ring {
+          animation: none !important;
+        }
+
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+
+        .avatar-stage,
+        .project-card {
+          transform: none !important;
+        }
+
+        .cursor {
+          display: none !important;
+        }
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 960px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+          text-align: center;
+        }
+
+        .hero-left {
+          align-items: center;
+        }
+
+        .typing-line {
+          justify-content: center;
+        }
+
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+
+        .stat-card.indent {
+          margin-left: 0;
+        }
+
+        .skills-cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .project-card.offset {
+          margin-top: 0;
+        }
+
+        .achievements-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 640px) {
+        section {
+          padding: 70px 0;
+          scroll-margin-top: 80px;
+        }
+
+        .hero-section {
+          padding-top: calc(var(--nav-height) + 30px);
+        }
+
+        .nav-wrapper {
+          top: 14px;
+        }
+
+        .nav-pill {
+          padding: 6px 8px;
+        }
+
+        .nav-link {
+          padding: 6px 12px;
+          font-size: 0.8rem;
+        }
+
+        .avatar-stage {
+          width: 250px;
+          height: 250px;
+        }
+
+        .monogram {
+          font-size: 4.2rem;
+        }
+
+        .chip-1 {
+          right: 0;
+        }
+        .chip-2 {
+          left: -10px;
+        }
+        .chip-3 {
+          right: -15px;
+        }
+        .chip-4 {
+          left: -10px;
+        }
+
+        .project-card {
+          padding: 26px 22px;
+          min-height: auto;
+        }
+
+        .timeline {
+          padding-left: 36px;
+        }
+
+        .timeline-node {
+          left: -36px;
+        }
+
+        .contact-card {
+          padding: 45px 20px;
+        }
+
+        .footer-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background glowing blurred drifting blobs -->
+    <div class="blob-container" aria-hidden="true">
+      <div class="blob blob-blue"></div>
+      <div class="blob blob-purple"></div>
+    </div>
+
+    <!-- Floating centered glass pill navigation -->
+    <header class="nav-wrapper">
+      <nav class="nav-pill" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. HOME SECTION -->
+      <section id="home" class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <div class="hero-left reveal">
+              <span class="eyebrow">Portfolio 2026</span>
+              <h1 class="hero-name">
+                <span class="first-name">Balu</span>
+                <span class="last-name gradient-text">Nadupuru</span>
+              </h1>
+              <div class="typing-line">
+                <span>Aspiring</span>
+                <span id="typing-word" class="typing-highlight">AI expert</span>
+                <span class="cursor" aria-hidden="true">|</span>
+              </div>
+              <p class="hero-intro">
+                I’m a computer science student who loves learning new things and turning them into working web apps. My
+                goal is to become an expert in Artificial Intelligence.
+              </p>
+              <div class="hero-badge">
+                <span class="glowing-cyan-dot" aria-hidden="true"></span>
+                <span>B.Tech CSE (Artificial Intelligence), 1st year · Joy University</span>
+              </div>
+              <div>
+                <a href="#contact" class="btn-gradient">Get in touch</a>
+              </div>
+            </div>
+
+            <div class="hero-right reveal">
+              <div class="avatar-stage" id="avatarStage">
+                <div class="rotating-ring" aria-hidden="true"></div>
+                <div class="avatar-center">
+                  <div class="monogram" aria-label="Balu Nadupuru avatar monogram">BN</div>
+                </div>
+                <!-- 4 Floating Glass Chips around avatar -->
+                <div class="floating-chip chip-1">Python</div>
+                <div class="floating-chip chip-2">HTML</div>
+                <div class="floating-chip chip-3">CSS</div>
+                <div class="floating-chip chip-4">Gen AI</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. ABOUT SECTION -->
+      <section id="about">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-left reveal">
+              <span class="eyebrow">About</span>
+              <h2 class="section-heading">Curious first. <span class="gradient-text">Builder</span> always.</h2>
+              <p class="about-text">
+                I’m interested in <strong>learning new things</strong> and gaining knowledge, and I like
+                <strong>turning what I learn into something people can click, type into and use</strong>.
+              </p>
+              <p class="about-text">
+                I want to <strong>sharpen my technical and communication skills</strong>, and grow step by step into an
+                <strong>expert in Artificial Intelligence</strong>.
+              </p>
+            </div>
+
+            <div class="about-right reveal">
+              <div class="stats-stack">
+                <div class="glass-card stat-card">
+                  <div class="stat-number">1st year</div>
+                  <div class="stat-label">B.Tech CSE (AI), Joy University</div>
+                </div>
+                <div class="glass-card stat-card indent">
+                  <div class="stat-number">2 projects</div>
+                  <div class="stat-label">Built with HTML, CSS and Python</div>
+                </div>
+                <div class="glass-card stat-card">
+                  <div class="stat-number">AI focus</div>
+                  <div class="stat-label">Learning generative AI basics</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. SKILLS SECTION -->
+      <section id="skills" class="skills-section">
+        <div class="container">
+          <div class="skills-header reveal">
+            <span class="eyebrow">Skills</span>
+            <h2 class="section-heading"><span class="gradient-text">Tools</span> I work with</h2>
+          </div>
+        </div>
+
+        <!-- Full-width infinite scrolling ticker of outline-only text -->
+        <div class="ticker-container reveal" aria-hidden="true">
+          <div class="ticker-track">
+            <div class="ticker-item">PYTHON <span class="ticker-dot">•</span> HTML <span class="ticker-dot">•</span> CSS <span class="ticker-dot">•</span> JAVASCRIPT <span class="ticker-dot">•</span> GEN AI <span class="ticker-dot">•</span> TEAMWORK <span class="ticker-dot">•</span></div>
+            <div class="ticker-item">PYTHON <span class="ticker-dot">•</span> HTML <span class="ticker-dot">•</span> CSS <span class="ticker-dot">•</span> JAVASCRIPT <span class="ticker-dot">•</span> GEN AI <span class="ticker-dot">•</span> TEAMWORK <span class="ticker-dot">•</span></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="skills-cards-grid">
+            <div class="glass-card skill-card reveal">
+              <h3 class="skill-card-title">Programming languages</h3>
+              <div class="chips-wrap">
+                <span class="chip chip-blue">Python (fundamentals)</span>
+                <span class="chip chip-purple">JavaScript</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card reveal">
+              <h3 class="skill-card-title">Technical skills</h3>
+              <div class="chips-wrap">
+                <span class="chip chip-blue">Web development</span>
+                <span class="chip chip-purple">HTML</span>
+                <span class="chip chip-blue">CSS</span>
+                <span class="chip chip-purple">Basic generative AI</span>
+              </div>
+            </div>
+
+            <div class="glass-card skill-card reveal">
+              <h3 class="skill-card-title">Other skills</h3>
+              <div class="chips-wrap">
+                <span class="chip chip-blue">Teamwork</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PROJECTS SECTION -->
+      <section id="projects" class="projects-section">
+        <div class="container">
+          <div class="projects-header reveal">
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-heading">Things I’ve <span class="gradient-text">built</span></h2>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Project 01 -->
+            <article class="glass-card project-card reveal" data-tilt-card>
+              <div class="project-card-inner">
+                <div class="project-number">01</div>
+                <h3 class="project-title">Restaurant Table Booking App</h3>
+                <p class="project-desc">
+                  A web app where customers book a restaurant table by choosing a date, time slot and number of guests.
+                  It validates the details, stops a time slot from being overbooked, and lists upcoming bookings with a
+                  cancel option.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">HTML</span>
+                  <span class="project-tag">CSS</span>
+                  <span class="project-tag">Python</span>
+                </div>
+              </div>
+              <div class="project-btn-wrap">
+                <button
+                  type="button"
+                  class="btn-gradient open-demo-btn"
+                  data-demo="restaurant"
+                  aria-haspopup="dialog"
+                  aria-controls="modal-restaurant"
+                >
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span>Open live demo</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+
+            <!-- Project 02 (Offset for asymmetry) -->
+            <article class="glass-card project-card offset reveal" data-tilt-card>
+              <div class="project-card-inner">
+                <div class="project-number">02</div>
+                <h3 class="project-title">Student Result Card Generator</h3>
+                <p class="project-desc">
+                  A web app where a student’s name, roll number and marks in five subjects are entered to produce a
+                  result card. It shows the total, percentage, grade and pass or fail status, with a bar for each
+                  subject’s marks.
+                </p>
+                <div class="project-tags">
+                  <span class="project-tag">HTML</span>
+                  <span class="project-tag">CSS</span>
+                  <span class="project-tag">Python</span>
+                </div>
+              </div>
+              <div class="project-btn-wrap">
+                <button
+                  type="button"
+                  class="btn-gradient open-demo-btn"
+                  data-demo="result-card"
+                  aria-haspopup="dialog"
+                  aria-controls="modal-result-card"
+                >
+                  <span class="pulse-dot" aria-hidden="true"></span>
+                  <span>Open live demo</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EDUCATION SECTION -->
+      <section id="education" class="education-section">
+        <div class="container">
+          <div class="education-header reveal">
+            <span class="eyebrow">Education</span>
+            <h2 class="section-heading">My <span class="gradient-text">journey</span> so far</h2>
+          </div>
+
+          <div class="timeline">
+            <div class="timeline-line" aria-hidden="true"></div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <div class="glass-card timeline-card">
+                <span class="timeline-status">Now</span>
+                <h3 class="timeline-title">B.Tech, Computer Science and Engineering (AI)</h3>
+                <p class="timeline-meta">Joy University, 1st year</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <div class="glass-card timeline-card">
+                <span class="timeline-status">Completed</span>
+                <h3 class="timeline-title">Intermediate</h3>
+                <p class="timeline-meta">Pre-university studies</p>
+              </div>
+            </div>
+
+            <div class="timeline-item reveal">
+              <div class="timeline-node" aria-hidden="true"></div>
+              <div class="glass-card timeline-card">
+                <span class="timeline-status">Completed</span>
+                <h3 class="timeline-title">10th</h3>
+                <p class="timeline-meta">Secondary school</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. ACHIEVEMENTS SECTION -->
+      <section id="achievements" class="achievements-section">
+        <div class="container">
+          <div class="achievements-header reveal">
+            <span class="eyebrow">Achievements and certifications</span>
+            <h2 class="section-heading">Milestones <span class="gradient-text">unlocked</span></h2>
+          </div>
+
+          <div class="achievements-grid">
+            <div class="dashed-card reveal">
+              <div class="dashed-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="6"/>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+              </div>
+              <p class="dashed-card-text">
+                <strong>Certifications:</strong> My first certificate will be showcased here.
+              </p>
+            </div>
+
+            <div class="dashed-card reveal">
+              <div class="dashed-card-icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m9 12 2 2 4-4"/>
+                  <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v2a7 7 0 0 1-7 7H12a7 7 0 0 1-7-7V7z"/>
+                  <path d="M12 16v5"/>
+                  <path d="M8 21h8"/>
+                </svg>
+              </div>
+              <p class="dashed-card-text">
+                <strong>Awards:</strong> Awards and recognitions will appear here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CONTACT SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="glass-card contact-card reveal">
+            <span class="eyebrow">Contact</span>
+            <h2 class="section-heading">Let’s build something <span class="gradient-text">intelligent</span>.</h2>
+            <p class="contact-sub">Have an idea, a question or an opportunity? I’d love to hear from you.</p>
+
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=balunadupuru6@gmail.com&su=Hello%20Balu"
+              target="_blank"
+              rel="noopener"
+              class="contact-email-link"
+            >
+              balunadupuru6@gmail.com
+            </a>
+
+            <div class="contact-actions">
+              <!-- Email compose link -->
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=balunadupuru6@gmail.com&su=Hello%20Balu"
+                target="_blank"
+                rel="noopener"
+                class="icon-btn"
+                aria-label="Send email to Balu Nadupuru via Gmail"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+              </a>
+
+              <!-- LinkedIn link -->
+              <a
+                href="https://www.linkedin.com/in/nadupuru-balu-60159441a"
+                target="_blank"
+                rel="noopener"
+                class="icon-btn"
+                aria-label="Balu Nadupuru LinkedIn Profile"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28m1.4 9.74v-8.37H5.06v8.37h2.8z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 8. FOOTER -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© 2026 Balu Nadupuru</div>
+        <div>B.Tech CSE (AI) · Joy University</div>
+      </div>
+    </footer>
+
+    <!-- Modal 1: Restaurant Table Booking App Live Demo -->
+    <div
+      id="modal-restaurant"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-restaurant-title"
+    >
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-eyebrow">Interactive Live Demo</span>
+            <h3 id="modal-restaurant-title" class="modal-title">Restaurant Table Booking App</h3>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal aria-label="Close demo">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="demo-intro-badge">
+            <span>● Live Interactive Simulation</span>
+          </div>
+          <p class="project-desc">
+            Choose a date, time slot, and number of guests. The app validates inputs in real time, prevents overbooking (maximum 3 tables per time slot), and lets you manage and cancel upcoming bookings.
+          </p>
+
+          <div id="booking-alert" class="demo-alert" role="alert"></div>
+
+          <!-- Booking Form -->
+          <form id="booking-form" class="demo-form-grid" novalidate>
+            <div class="demo-form-group">
+              <label for="book-name" class="demo-label">Customer Name</label>
+              <input type="text" id="book-name" class="demo-input" placeholder="e.g. Balu Nadupuru" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="book-phone" class="demo-label">Contact Number</label>
+              <input type="tel" id="book-phone" class="demo-input" placeholder="e.g. +91 98765 43210" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="book-date" class="demo-label">Reservation Date</label>
+              <input type="date" id="book-date" class="demo-input" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="book-time" class="demo-label">Time Slot</label>
+              <select id="book-time" class="demo-select" required>
+                <option value="12:00 PM">12:00 PM (Lunch)</option>
+                <option value="01:30 PM">01:30 PM (Lunch)</option>
+                <option value="06:00 PM">06:00 PM (Dinner)</option>
+                <option value="07:30 PM" selected>07:30 PM (Dinner - Popular)</option>
+                <option value="09:00 PM">09:00 PM (Dinner)</option>
+              </select>
+            </div>
+
+            <div class="demo-form-group full-width">
+              <label for="book-guests" class="demo-label">Number of Guests</label>
+              <select id="book-guests" class="demo-select" required>
+                <option value="1">1 Person</option>
+                <option value="2" selected>2 Guests (Couples table)</option>
+                <option value="4">4 Guests (Family table)</option>
+                <option value="6">6 Guests (Large table)</option>
+                <option value="8">8 Guests (Party)</option>
+              </select>
+            </div>
+
+            <div class="demo-form-group full-width demo-btn-row">
+              <button type="submit" class="demo-action-btn primary">
+                Confirm Reservation ↗
+              </button>
+              <button type="button" id="book-sample-btn" class="demo-action-btn secondary">
+                Fill Sample
+              </button>
+            </div>
+          </form>
+
+          <!-- Bookings List -->
+          <div>
+            <div class="section-subhead">
+              <span>Upcoming Bookings</span>
+              <span id="booking-count-badge" class="modal-eyebrow" style="color: var(--text-muted);">2 active</span>
+            </div>
+            <div id="booking-list-container" class="booking-list" style="margin-top: 12px;">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Student Result Card Generator Live Demo -->
+    <div
+      id="modal-result-card"
+      class="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-result-card-title"
+    >
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <span class="modal-eyebrow">Interactive Live Demo</span>
+            <h3 id="modal-result-card-title" class="modal-title">Student Result Card Generator</h3>
+          </div>
+          <button type="button" class="modal-close-btn" data-close-modal aria-label="Close demo">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="demo-intro-badge">
+            <span>● Live Interactive Simulation</span>
+          </div>
+          <p class="project-desc">
+            Enter the student’s name, roll number, and marks across 5 subjects (0–100) to compute totals, grade, pass/fail status, and generate visual performance bars.
+          </p>
+
+          <form id="result-form" class="demo-form-grid" novalidate>
+            <div class="demo-form-group">
+              <label for="stud-name" class="demo-label">Student Name</label>
+              <input type="text" id="stud-name" class="demo-input" value="Balu Nadupuru" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="stud-roll" class="demo-label">Roll Number</label>
+              <input type="text" id="stud-roll" class="demo-input" value="26JOYCS042" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="m-math" class="demo-label">Mathematics & Logic (100)</label>
+              <input type="number" id="m-math" class="demo-input" min="0" max="100" value="94" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="m-ai" class="demo-label">Artificial Intelligence Foundations (100)</label>
+              <input type="number" id="m-ai" class="demo-input" min="0" max="100" value="96" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="m-py" class="demo-label">Python Programming (100)</label>
+              <input type="number" id="m-py" class="demo-input" min="0" max="100" value="91" required />
+            </div>
+
+            <div class="demo-form-group">
+              <label for="m-ds" class="demo-label">Data Structures (100)</label>
+              <input type="number" id="m-ds" class="demo-input" min="0" max="100" value="88" required />
+            </div>
+
+            <div class="demo-form-group full-width">
+              <label for="m-eng" class="demo-label">English & Communication Skills (100)</label>
+              <input type="number" id="m-eng" class="demo-input" min="0" max="100" value="85" required />
+            </div>
+
+            <div class="demo-form-group full-width demo-btn-row">
+              <button type="submit" class="demo-action-btn primary">
+                Generate Result Card ↗
+              </button>
+              <button type="button" id="result-sample-btn" class="demo-action-btn secondary">
+                Load Sample Marks
+              </button>
+            </div>
+          </form>
+
+          <!-- Generated Result Card View -->
+          <div id="result-display" class="result-card-container">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Vanilla JavaScript -->
+    <script>
+      (function () {
+        'use strict';
+
+        // Check prefers-reduced-motion
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // 1. Typing animation in hero
+        const words = ['AI expert', 'web developer', 'Python programmer', 'lifelong learner'];
+        const typingEl = document.getElementById('typing-word');
+        let wordIndex = 0;
+        let charIndex = words[0].length;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function handleTyping() {
+          if (prefersReducedMotion || !typingEl) {
+            if (typingEl) typingEl.textContent = words[0];
+            return;
+          }
+
+          const currentWord = words[wordIndex];
+
+          if (isDeleting) {
+            typingEl.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+          } else {
+            typingEl.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
+          }
+
+          if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            typingSpeed = 1800; // pause at full word
+          } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typingSpeed = 400; // pause before typing next
+          }
+
+          setTimeout(handleTyping, typingSpeed);
+        }
+
+        if (!prefersReducedMotion) {
+          setTimeout(handleTyping, 1200);
+        }
+
+        // 2. Scroll-reveal with IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window && !prefersReducedMotion) {
+          const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                  // Small staggered delay
+                  setTimeout(() => {
+                    entry.target.classList.add('is-revealed');
+                  }, idx * 60);
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            {
+              threshold: 0.12,
+              rootMargin: '0px 0px -40px 0px',
+            }
+          );
+
+          revealElements.forEach((el) => revealObserver.observe(el));
+        } else {
+          revealElements.forEach((el) => el.classList.add('is-revealed'));
+        }
+
+        // 3. Navigation active state tracking
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+
+        if ('IntersectionObserver' in window) {
+          const navObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const id = entry.target.getAttribute('id');
+                  navLinks.forEach((link) => {
+                    if (link.getAttribute('href') === '#' + id) {
+                      link.classList.add('active');
+                      // Ensure active link is visible in horizontally scrolling pill
+                      link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    } else {
+                      link.classList.remove('active');
+                    }
+                  });
+                }
+              });
+            },
+            {
+              threshold: 0.3,
+            }
+          );
+
+          sections.forEach((sec) => navObserver.observe(sec));
+        }
+
+        // 4. Desktop-only 3D avatar tilt following mouse
+        const avatarStage = document.getElementById('avatarStage');
+        if (avatarStage && window.matchMedia('(min-width: 960px)').matches && !prefersReducedMotion) {
+          const heroRight = avatarStage.closest('.hero-right');
+          if (heroRight) {
+            heroRight.addEventListener('mousemove', (e) => {
+              const rect = avatarStage.getBoundingClientRect();
+              const centerX = rect.left + rect.width / 2;
+              const centerY = rect.top + rect.height / 2;
+              const deltaX = (e.clientX - centerX) / (rect.width / 2);
+              const deltaY = (e.clientY - centerY) / (rect.height / 2);
+
+              const rotateY = Math.max(-15, Math.min(15, deltaX * 14));
+              const rotateX = Math.max(-15, Math.min(15, -deltaY * 14));
+
+              avatarStage.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            heroRight.addEventListener('mouseleave', () => {
+              avatarStage.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            });
+          }
+        }
+
+        // 5. Project cards purple glow cursor tracker and subtle 3D tilt
+        const projectCards = document.querySelectorAll('[data-tilt-card]');
+        if (window.matchMedia('(min-width: 960px)').matches && !prefersReducedMotion) {
+          projectCards.forEach((card) => {
+            card.addEventListener('mousemove', (e) => {
+              const rect = card.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+
+              // Set CSS variables for purple spotlight
+              card.style.setProperty('--mouse-x', `${x}px`);
+              card.style.setProperty('--mouse-y', `${y}px`);
+
+              // 3D tilt
+              const centerX = rect.width / 2;
+              const centerY = rect.height / 2;
+              const tiltX = ((y - centerY) / centerY) * -6;
+              const tiltY = ((x - centerX) / centerX) * 6;
+
+              card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+              card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+              card.style.setProperty('--mouse-x', '-500px');
+              card.style.setProperty('--mouse-y', '-500px');
+            });
+          });
+        }
+
+        // 6. Interactive Live Demo Modals Management
+        const openDemoBtns = document.querySelectorAll('.open-demo-btn');
+        const modalOverlays = document.querySelectorAll('.modal-overlay');
+        const closeBtns = document.querySelectorAll('[data-close-modal]');
+
+        function openModal(modalId) {
+          const modal = document.getElementById(modalId);
+          if (modal) {
+            modal.classList.add('is-active');
+            document.body.style.overflow = 'hidden';
+            const firstInput = modal.querySelector('input, select, button');
+            if (firstInput) firstInput.focus();
+          }
+        }
+
+        function closeModal(modal) {
+          if (modal) {
+            modal.classList.remove('is-active');
+            document.body.style.overflow = '';
+          }
+        }
+
+        openDemoBtns.forEach((btn) => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const demoType = btn.dataset.demo;
+            if (demoType === 'restaurant') {
+              openModal('modal-restaurant');
+            } else if (demoType === 'result-card') {
+              openModal('modal-result-card');
+            }
+          });
+        });
+
+        closeBtns.forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const modal = btn.closest('.modal-overlay');
+            closeModal(modal);
+          });
+        });
+
+        modalOverlays.forEach((overlay) => {
+          overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+              closeModal(overlay);
+            }
+          });
+        });
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            modalOverlays.forEach((modal) => {
+              if (modal.classList.contains('is-active')) {
+                closeModal(modal);
+              }
+            });
+          }
+        });
+
+        // 7. Project 01: Restaurant Table Booking App Logic
+        const today = new Date();
+        const todayStr = today.toISOString().split('T')[0];
+        const dateInput = document.getElementById('book-date');
+        if (dateInput) {
+          dateInput.value = todayStr;
+          dateInput.min = todayStr;
+        }
+
+        const initialBookings = [
+          { id: 'TB-101', name: 'Aarav Sharma', phone: '+91 98765 12345', date: todayStr, time: '07:30 PM', guests: '4' },
+          { id: 'TB-102', name: 'Priya Patel', phone: '+91 98450 67890', date: todayStr, time: '07:30 PM', guests: '2' },
+        ];
+
+        let bookingsList = [...initialBookings];
+        const MAX_TABLES_PER_SLOT = 3;
+
+        const bookingForm = document.getElementById('booking-form');
+        const bookingAlert = document.getElementById('booking-alert');
+        const bookingListContainer = document.getElementById('booking-list-container');
+        const bookingCountBadge = document.getElementById('booking-count-badge');
+        const bookSampleBtn = document.getElementById('book-sample-btn');
+
+        function showBookingAlert(msg, type) {
+          if (!bookingAlert) return;
+          bookingAlert.className = 'demo-alert ' + type;
+          bookingAlert.textContent = msg;
+          bookingAlert.style.display = 'flex';
+          setTimeout(() => {
+            if (type === 'success') {
+              bookingAlert.style.display = 'none';
+            }
+          }, 4500);
+        }
+
+        function renderBookings() {
+          if (!bookingListContainer) return;
+          bookingListContainer.innerHTML = '';
+
+          if (bookingsList.length === 0) {
+            bookingListContainer.innerHTML = '<div style="color: var(--text-muted); font-size: 0.9rem; padding: 12px 0;">No active bookings. Make your first reservation above!</div>';
+            if (bookingCountBadge) bookingCountBadge.textContent = '0 active';
+            return;
+          }
+
+          if (bookingCountBadge) {
+            bookingCountBadge.textContent = `${bookingsList.length} active`;
+          }
+
+          bookingsList.forEach((booking) => {
+            const item = document.createElement('div');
+            item.className = 'booking-item';
+            item.innerHTML = `
+              <div class="booking-item-info">
+                <div class="booking-item-title">${booking.name} · <span style="color: var(--cyan); font-weight: normal;">${booking.guests} Guests</span></div>
+                <div class="booking-item-meta">Ref: <strong>#${booking.id}</strong> | Date: ${booking.date} | Slot: ${booking.time}</div>
+              </div>
+              <button type="button" class="booking-cancel-btn" data-cancel-id="${booking.id}" aria-label="Cancel reservation for ${booking.name}">
+                Cancel
+              </button>
+            `;
+            bookingListContainer.appendChild(item);
+          });
+
+          // Attach cancel handlers
+          bookingListContainer.querySelectorAll('.booking-cancel-btn').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const cancelId = btn.dataset.cancelId;
+              const cancelled = bookingsList.find((b) => b.id === cancelId);
+              bookingsList = bookingsList.filter((b) => b.id !== cancelId);
+              renderBookings();
+              showBookingAlert(`Reservation #${cancelId} for ${cancelled ? cancelled.name : 'guest'} has been cancelled. Slot capacity restored.`, 'success');
+            });
+          });
+        }
+
+        renderBookings();
+
+        if (bookSampleBtn) {
+          bookSampleBtn.addEventListener('click', () => {
+            const nameEl = document.getElementById('book-name');
+            const phoneEl = document.getElementById('book-phone');
+            const timeEl = document.getElementById('book-time');
+            const guestsEl = document.getElementById('book-guests');
+            if (nameEl) nameEl.value = 'Vikram Malhotra';
+            if (phoneEl) phoneEl.value = '+91 99887 76655';
+            if (timeEl) timeEl.value = '06:00 PM';
+            if (guestsEl) guestsEl.value = '2';
+          });
+        }
+
+        if (bookingForm) {
+          bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('book-name')?.value.trim();
+            const phone = document.getElementById('book-phone')?.value.trim();
+            const date = document.getElementById('book-date')?.value;
+            const time = document.getElementById('book-time')?.value;
+            const guests = document.getElementById('book-guests')?.value;
+
+            if (!name || !phone || !date || !time || !guests) {
+              showBookingAlert('Please fill in all reservation fields.', 'error');
+              return;
+            }
+
+            // Overbooking prevention: check existing bookings for matching date and time
+            const existingInSlot = bookingsList.filter((b) => b.date === date && b.time === time);
+            if (existingInSlot.length >= MAX_TABLES_PER_SLOT) {
+              showBookingAlert(
+                `⚠️ Overbooking stopped: The ${time} slot on ${date} has reached full capacity (${MAX_TABLES_PER_SLOT} tables reserved). Please select another time slot.`,
+                'error'
+              );
+              return;
+            }
+
+            const newBooking = {
+              id: 'TB-' + Math.floor(100 + Math.random() * 900),
+              name,
+              phone,
+              date,
+              time,
+              guests,
+            };
+
+            bookingsList.unshift(newBooking);
+            renderBookings();
+            showBookingAlert(`✓ Reservation confirmed for ${name}! Ref #${newBooking.id} (${guests} guests on ${date} at ${time}).`, 'success');
+
+            // Reset name and phone
+            const nameInput = document.getElementById('book-name');
+            const phoneInput = document.getElementById('book-phone');
+            if (nameInput) nameInput.value = '';
+            if (phoneInput) phoneInput.value = '';
+          });
+        }
+
+        // 8. Project 02: Student Result Card Generator Logic
+        const resultForm = document.getElementById('result-form');
+        const resultDisplay = document.getElementById('result-display');
+        const resultSampleBtn = document.getElementById('result-sample-btn');
+
+        const subjectsMeta = [
+          { id: 'm-math', name: 'Mathematics & Logic' },
+          { id: 'm-ai', name: 'AI Foundations' },
+          { id: 'm-py', name: 'Python Programming' },
+          { id: 'm-ds', name: 'Data Structures' },
+          { id: 'm-eng', name: 'English & Communication' },
+        ];
+
+        function computeAndRenderResultCard() {
+          if (!resultDisplay) return;
+
+          const studentName = document.getElementById('stud-name')?.value.trim() || 'Student';
+          const rollNumber = document.getElementById('stud-roll')?.value.trim() || 'N/A';
+
+          let total = 0;
+          let anyFailed = false;
+          const subjectScores = [];
+
+          subjectsMeta.forEach((sub) => {
+            const input = document.getElementById(sub.id);
+            let score = parseInt(input ? input.value : '0', 10);
+            if (isNaN(score)) score = 0;
+            score = Math.max(0, Math.min(100, score));
+            if (score < 35) anyFailed = true;
+            total += score;
+            subjectScores.push({ name: sub.name, score });
+          });
+
+          const maxTotal = 500;
+          const percentage = (total / maxTotal) * 100;
+          const isPassed = !anyFailed && percentage >= 40;
+
+          let grade = 'F';
+          if (isPassed) {
+            if (percentage >= 90) grade = 'A+';
+            else if (percentage >= 80) grade = 'A';
+            else if (percentage >= 70) grade = 'B';
+            else if (percentage >= 60) grade = 'C';
+            else grade = 'D';
+          }
+
+          let barsHtml = subjectScores
+            .map(
+              (s) => `
+            <div class="subject-bar-row">
+              <div class="subject-bar-labels">
+                <span class="subject-bar-name">${s.name}</span>
+                <span class="subject-bar-score">${s.score}/100</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" style="width: ${s.score}%;"></div>
+              </div>
+            </div>
+          `
+            )
+            .join('');
+
+          resultDisplay.innerHTML = `
+            <div class="result-card-header">
+              <div>
+                <div class="result-student-name">${studentName}</div>
+                <div class="result-roll-no">Roll No: <strong>${rollNumber}</strong> · Joy University</div>
+              </div>
+              <div class="result-badge ${isPassed ? 'pass' : 'fail'}">
+                ${isPassed ? '● Status: PASS' : '● Status: FAIL'}
+              </div>
+            </div>
+
+            <div class="subject-bars-list">
+              ${barsHtml}
+            </div>
+
+            <div class="result-summary-grid">
+              <div class="result-summary-box">
+                <div class="result-summary-val">${total}/${maxTotal}</div>
+                <div class="result-summary-lbl">Total Marks</div>
+              </div>
+              <div class="result-summary-box">
+                <div class="result-summary-val">${percentage.toFixed(1)}%</div>
+                <div class="result-summary-lbl">Percentage</div>
+              </div>
+              <div class="result-summary-box">
+                <div class="result-summary-val" style="color: var(--cyan);">${grade}</div>
+                <div class="result-summary-lbl">Overall Grade</div>
+              </div>
+            </div>
+          `;
+        }
+
+        // Initial compute
+        computeAndRenderResultCard();
+
+        if (resultForm) {
+          resultForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            computeAndRenderResultCard();
+          });
+        }
+
+        if (resultSampleBtn) {
+          resultSampleBtn.addEventListener('click', () => {
+            const nameEl = document.getElementById('stud-name');
+            const rollEl = document.getElementById('stud-roll');
+            if (nameEl) nameEl.value = 'Balu Nadupuru';
+            if (rollEl) rollEl.value = '26JOYCS042';
+            document.getElementById('m-math').value = '98';
+            document.getElementById('m-ai').value = '95';
+            document.getElementById('m-py').value = '96';
+            document.getElementById('m-ds').value = '92';
+            document.getElementById('m-eng').value = '89';
+            computeAndRenderResultCard();
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
