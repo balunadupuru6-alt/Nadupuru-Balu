@@ -1010,6 +1010,151 @@
         color: #ffffff;
       }
 
+      /* Detailed Milestone Achievement Cards */
+      .achievement-card {
+        padding: 32px 28px;
+        border-radius: var(--card-radius);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: var(--glass-blur);
+        -webkit-backdrop-filter: var(--glass-blur);
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        transition: transform 0.3s cubic-bezier(0.2, 0, 0.2, 1),
+                    border-color 0.3s ease,
+                    box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .achievement-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(47, 107, 255, 0.6), rgba(139, 92, 246, 0.6), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .achievement-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(139, 92, 246, 0.45);
+        box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.18);
+      }
+
+      .achievement-card:hover::before {
+        opacity: 1;
+      }
+
+      .achievement-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .achievement-cat {
+        font-family: var(--font-heading);
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--cyan);
+      }
+
+      .achievement-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 9999px;
+      }
+
+      .achievement-badge.achieved {
+        background: rgba(34, 211, 238, 0.1);
+        border: 1px solid rgba(34, 211, 238, 0.3);
+        color: var(--cyan);
+      }
+
+      .achievement-badge.pursuit {
+        background: rgba(139, 92, 246, 0.12);
+        border: 1px solid rgba(139, 92, 246, 0.35);
+        color: #c4b5fd;
+      }
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+
+      .status-dot.cyan {
+        background: var(--cyan);
+        box-shadow: 0 0 8px var(--cyan);
+      }
+
+      .status-dot.purple {
+        background: var(--purple);
+        box-shadow: 0 0 8px var(--purple);
+        animation: pulseDot 2s ease-in-out infinite;
+      }
+
+      .achievement-title {
+        font-family: var(--font-heading);
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #ffffff;
+        line-height: 1.35;
+      }
+
+      .achievement-meta {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--cyan);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: -6px;
+      }
+
+      .achievement-desc {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      .achievements-quote-box {
+        margin-top: 28px;
+        padding: 24px 28px;
+        border-radius: var(--card-radius);
+        border: 1px dashed rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.02);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .achievements-quote-text {
+        font-family: var(--font-heading);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #ffffff;
+        letter-spacing: 0.03em;
+      }
+
+      .achievements-quote-sub {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+      }
+
       /* 7. CONTACT SECTION */
       .contact-section {
         padding-bottom: 120px;
@@ -2001,31 +2146,83 @@
           </div>
 
           <div class="achievements-grid">
-            <div class="dashed-card reveal">
-              <div class="dashed-card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="6"/>
-                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-                </svg>
+            <!-- Milestone 1: Academic Foundation -->
+            <div class="achievement-card reveal">
+              <div class="achievement-card-top">
+                <span class="achievement-cat">Academic Foundation</span>
+                <span class="achievement-badge achieved">
+                  <span class="status-dot cyan" aria-hidden="true"></span>
+                  <span>Achieved</span>
+                </span>
               </div>
-              <p class="dashed-card-text">
-                <strong>Certifications:</strong> My first certificate will be showcased here.
+              <h3 class="achievement-title">B.Tech CSE (AI) Academic Admission &amp; Foundation</h3>
+              <div class="achievement-meta">
+                <span>Computer Science &amp; Engineering (AI) • Joy University, Year 1</span>
+              </div>
+              <p class="achievement-desc">
+                Secured admission to B.Tech Computer Science and Engineering (Artificial Intelligence) at Joy University, building a rigorous foundation in computational theory, algorithms, discrete mathematics, and software design principles.
               </p>
             </div>
 
-            <div class="dashed-card reveal">
-              <div class="dashed-card-icon" aria-hidden="true">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m9 12 2 2 4-4"/>
-                  <path d="M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v2a7 7 0 0 1-7 7H12a7 7 0 0 1-7-7V7z"/>
-                  <path d="M12 16v5"/>
-                  <path d="M8 21h8"/>
-                </svg>
+            <!-- Milestone 2: Technical Competence -->
+            <div class="achievement-card reveal">
+              <div class="achievement-card-top">
+                <span class="achievement-cat">Technical Competence</span>
+                <span class="achievement-badge achieved">
+                  <span class="status-dot cyan" aria-hidden="true"></span>
+                  <span>Achieved</span>
+                </span>
               </div>
-              <p class="dashed-card-text">
-                <strong>Awards:</strong> Awards and recognitions will appear here.
+              <h3 class="achievement-title">Python Scripting &amp; Core Web Foundations</h3>
+              <div class="achievement-meta">
+                <span>Algorithmic &amp; Markup Mastery • Python 3 Core</span>
+              </div>
+              <p class="achievement-desc">
+                Attained strong hands-on proficiency in Python programming, conditional logic, modular functions, exception handling, and clean responsive HTML5 &amp; CSS3 layout design.
               </p>
             </div>
+
+            <!-- Milestone 3: Mastery Target -->
+            <div class="achievement-card reveal">
+              <div class="achievement-card-top">
+                <span class="achievement-cat">Mastery Target</span>
+                <span class="achievement-badge pursuit">
+                  <span class="status-dot purple" aria-hidden="true"></span>
+                  <span>Active Pursuit</span>
+                </span>
+              </div>
+              <h3 class="achievement-title">Programming Expertise &amp; Systems Mastery</h3>
+              <div class="achievement-meta">
+                <span>Elite Technical Craftsmanship • Aspiring AI Expert</span>
+              </div>
+              <p class="achievement-desc">
+                Deepening algorithmic problem-solving, advanced Python systems engineering, clean software architecture, and AI model orchestration to achieve true programming expertise.
+              </p>
+            </div>
+
+            <!-- Milestone 4: North Star Goal -->
+            <div class="achievement-card reveal">
+              <div class="achievement-card-top">
+                <span class="achievement-cat">North Star Goal</span>
+                <span class="achievement-badge pursuit">
+                  <span class="status-dot purple" aria-hidden="true"></span>
+                  <span>Active Pursuit</span>
+                </span>
+              </div>
+              <h3 class="achievement-title">Founding My Own AI &amp; Tech Startup</h3>
+              <div class="achievement-meta">
+                <span>Entrepreneurial Vision &amp; Scalable Products • Tech Founder</span>
+              </div>
+              <p class="achievement-desc">
+                Actively designing, validating, and building proprietary intelligent software products with the ambitious goal of launching my own high-impact technology startup.
+              </p>
+            </div>
+          </div>
+
+          <!-- Milestones Philosophy Quote Box -->
+          <div class="achievements-quote-box reveal">
+            <div class="achievements-quote-text">“Continuous Progress • Rigorous Fundamentals • Shipped Solutions”</div>
+            <div class="achievements-quote-sub">Every milestone represents committed dedication in coursework, hands-on software development, and real-world AI applications.</div>
           </div>
         </div>
       </section>
