@@ -2661,15 +2661,17 @@
 
         if (resultSampleBtn) {
           resultSampleBtn.addEventListener('click', () => {
-            const nameEl = document.getElementById('stud-name');
-            const rollEl = document.getElementById('stud-roll');
-            if (nameEl) nameEl.value = 'Balu Nadupuru';
-            if (rollEl) rollEl.value = '26JOYCS042';
-            document.getElementById('m-math').value = '98';
-            document.getElementById('m-ai').value = '95';
-            document.getElementById('m-py').value = '96';
-            document.getElementById('m-ds').value = '92';
-            document.getElementById('m-eng').value = '89';
+            const setVal = (id, val) => {
+              const el = document.getElementById(id);
+              if (el) el.value = val;
+            };
+            setVal('stud-name', 'Balu Nadupuru');
+            setVal('stud-roll', '26JOYCS042');
+            setVal('m-math', '98');
+            setVal('m-ai', '95');
+            setVal('m-py', '96');
+            setVal('m-ds', '92');
+            setVal('m-eng', '89');
             computeAndRenderResultCard();
           });
         }
